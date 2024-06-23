@@ -1,0 +1,17 @@
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    margin: 5px;
+    transition: transform 0.1s ease;
+}
+
+.transformed {
+    transform: rotate(45deg) scale(1.5);
+}

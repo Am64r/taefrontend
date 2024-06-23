@@ -1,0 +1,35 @@
+/* ChatBox.css */
+.placeholder {
+    border: none;
+    outline: none;
+    width: 30%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #f5f5dcdc;
+    font-family: 'Playfair Display', serif;
+    font-size: x-large;
+  }
+  
+  .placeholder:focus {
+    border-bottom: 2px solid #000000; /* Change the color to match your theme */
+  }
+  
+  .button {
+    display: none; /* Hide the button */
+  }
+  
+  .messages {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the messages vertically */
+    width: 85%; /* Adjust the width as needed */
+    max-width: 1200px; /* Adjust the max-width as needed */
+    margin: 0 auto; /* Center the messages container horizontally */
+  }
+  
+  .userText,
+  .generatedText {
+    margin-bottom: 10px;
+  }
+  
