@@ -31,7 +31,7 @@ function App() {
 
   const handleSendMessage = async (inputText) => {
     try {
-      const response = await fetch('http://localhost:5000/generate-text', { // Updated URL
+      const response = await fetch('http://localhost:8000/generate-text', { // Updated URL
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
