@@ -1,5 +1,11 @@
+body {
+  background-color: #f5f5dcdc;
+  
+}
+
 .App {
   text-align: center;
+  background-color: #0A0A0A;
 }
 
 .App-logo {
@@ -7,14 +13,22 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.Prof-pic {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+
+.bio {
+  color: white;
+  font-family: 'Playfair Display', serif;
+  width: 500px;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #0A0A0A;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,11 +42,151 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+.Socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 20px;
+  /* padding-top: 50px; */
+}
+
+
+.headshot {
+  height: 30%;
+  width: 30%;
+  border-radius: 100%;
+}
+
+.pic-bio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 95px
+}
+
+
+h1 {
+  font-family: 'Courier New', Courier, monospace; /* Example of a different font */
+  margin-bottom: 20px; /* Add some space below the title */
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+
+
+
+
+.messages {
+  margin-top: 20px;
+  color: white; /* Set the text color to white */
+}
+
+.generatedText {
+  font-size: inherit; /* Inherit the font size from the parent container */
+  color: inherit; /* Inherit the color from the parent container */
+  background-color: transparent; /* No background */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h2 {
+  color: black;
+  font-family: 'Playfair Display', serif;
+  
+}
+
+.contact {
+  padding-top: 80px;
+}
+
+.calendly {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px; /* Rounded corners */
+  background-color: #855ecf; /* Primary color */
+  color: #f5f5dcdc; /* White text */
+  border: none; /* No border */
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px; /* Adjust the font size as needed */
+  text-decoration: none; /* Remove underline for links */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.calendly:hover {
+  background-color: #6125d1; /* Slightly darker shade on hover */
+}
+
+.arrow-container {
+  position: absolute;
+  left: 50%;
+  bottom: 750px; 
+  transform: translateX(-50%);
+
+}
+
+.textbox1 {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 30px;
+  color: black;
+  font-weight: bold;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding-bottom: 20px;
+  
+}
+
+
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+  background-color: #eee;
+  padding: 25px;
+  border-radius: 7px;
+}
+
+.contact__form input, .contact__form textarea {
+  border: none;
+  border-radius: 2px;
+  padding: 10px;
+  resize: vertical;
+  outline: none;
+  box-sizing: content-box;
+  border-bottom: solid 3px transparent;
+  margin: 5px 0;
+}
+
+.contact__form label {
+  font-weight: 600;
+}
+
+.contact__form input:focus, .contact__form textarea:focus {
+  border-bottom: solid 3px rgb(0, 119, 255);
 }
