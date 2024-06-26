@@ -30,8 +30,9 @@ function App() {
   const [conversation, setConversation] = useState([]); // Store the entire conversation
 
   const handleSendMessage = async (inputText) => {
+    // https://taeflask-jgx3sub2o-amr-elhadys-projects.vercel.app/generate-text
     try {
-      const response = await fetch('https://taeflask-jgx3sub2o-amr-elhadys-projects.vercel.app/generate-text', { // Updated URL
+      const response = await fetch('http://127.0.0.1:8000', { // Updated URL
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
