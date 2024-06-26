@@ -31,7 +31,7 @@ function App() {
 
   const handleSendMessage = async (inputText) => {
     try {
-      const response = await fetch('https://taeflask-jgx3sub2o-amr-elhadys-projects.vercel.app/', { // Updated URL
+      const response = await fetch('taeflask-4jd4md6uf-amr-elhadys-projects.vercel.app', { // Updated URL
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
