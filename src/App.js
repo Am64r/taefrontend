@@ -32,7 +32,7 @@ function App() {
   const handleSendMessage = async (inputText) => {
     // https://taeflask-jgx3sub2o-amr-elhadys-projects.vercel.app/generate-text
     try {
-      const response = await fetch('http://127.0.0.1:8000/generate-text', { // Updated URL
+      const response = await fetch('https://taeflask-jgx3sub2o-amr-elhadys-projects.vercel.app/generate-text', { // Updated URL
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
