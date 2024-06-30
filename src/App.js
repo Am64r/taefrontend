@@ -33,7 +33,7 @@ function App() {
     // https://taeflask-jgx3sub2o-amr-elhadys-projects.vercel.app/generate-text
     try {
       const response = await fetch('https://taeflask-jgx3sub2o-amr-elhadys-projects.vercel.app/', { // Updated URL
-        method: 'POST',
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
         },
