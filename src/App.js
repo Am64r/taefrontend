@@ -23,17 +23,14 @@ import {Parallax, ParallaxLayer} from '@react-spring/parallax';
 
 // In App.js or another component
 
-
-
 function App() {
   const ref = useRef();
   const [conversation, setConversation] = useState([]); // Store the entire conversation
 
   const handleSendMessage = async (inputText) => {
-    // https://taeflask-jgx3sub2o-amr-elhadys-projects.vercel.app/generate-text
     try {
-      const response = await fetch('https://taeflask-jgx3sub2o-amr-elhadys-projects.vercel.app/', { // Updated URL
-        method: 'GET',
+      const response = await fetch('https://taeflask-2hz6c3tcn-amr-elhadys-projects.vercel.app/generate-text', {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -51,6 +48,7 @@ function App() {
       // Add a delay before setting the new response
       setTimeout(() => {
         setConversation([
+          { role: 'user', content: inputText },
           { role: 'assistant', content: data.generatedText },
         ]);
       }, 1000); // Adjust the delay time (in milliseconds) as needed
