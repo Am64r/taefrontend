@@ -66,14 +66,14 @@ function App() {
         </ParallaxLayer>
 
         {/* About Section */}
-        <ParallaxLayer offset={1} speed={0.8}>
+        {/* <ParallaxLayer offset={1} speed={0.8}>
           <div className="about-section">
             <h2>About Me</h2>
             <p>
               Welcome! I'm Amr Elhady, a passionate developer with experience in building dynamic web applications. My interests include web development, AI, and open-source projects. Feel free to explore my work and connect with me!
             </p>
           </div>
-        </ParallaxLayer>
+        </ParallaxLayer> */}
 
         {/* Social Media Icons Section */}
         <ParallaxLayer offset={1.75} speed={0.8}>
