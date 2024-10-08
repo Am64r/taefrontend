@@ -36,26 +36,25 @@ function App() {
         },
         body: JSON.stringify({ text: inputText }),
       });
-
+  
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-
+  
       const data = await response.json();
-      // Clear the conversation first
-      setConversation([]);
-
-      // Add a delay before setting the new response
-      setTimeout(() => {
-        setConversation([
-          { role: 'user', content: inputText },
-          { role: 'assistant', content: data.generatedText },
-        ]);
-      }, 1000); // Adjust the delay time (in milliseconds) as needed
+      console.log('Response data:', data); // Add this line for debugging
+  
+      setConversation([
+        { role: 'user', content: inputText },
+        { role: 'assistant', content: data.generatedText },
+      ]);
     } catch (error) {
       console.error('There was a problem with the fetch operation:', error);
+      // Optionally, update the UI to show an error message
+      setConversation(prev => [...prev, { role: 'system', content: 'An error occurred. Please try again.' }]);
     }
   };
+
   
   return (
     <div className="App">
