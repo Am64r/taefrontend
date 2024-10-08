@@ -3,25 +3,12 @@ import './App.css';
 import LinkedInLogo from './components/LinkedInLogo.js';
 import GitHubLogo from './components/GitHubLogo.js';
 import Header from './components/Header';
-import headshot from './images/micsuit.jpeg';
-import sampleimage from './images/sampleheadshot.jpeg';
-import Typewriter from './components/TypeWriter.js'
-import ChatBox from './components/ChatBox.js'
+import Typewriter from './components/TypeWriter.js';
+import ChatBox from './components/ChatBox.js';
 import Email from './components/Email.js';
-import { InlineWidget } from "react-calendly";
-import { PopupWidget } from "react-calendly";
 import { PopupButton } from "react-calendly";
-import Footer from './components/Footer.js'
-// import ScrollArrow from './components/ScrollArrow.js';
-import TextBox from './components/TextBox.js';
-
-
-
-import {Parallax, ParallaxLayer} from '@react-spring/parallax';
-
-// import { ChatOpenAI } from "langchain/chat_models/openai";
-
-// In App.js or another component
+import Footer from './components/Footer.js';
+import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 function App() {
   const ref = useRef();
@@ -36,14 +23,14 @@ function App() {
         },
         body: JSON.stringify({ text: inputText }),
       });
-  
+
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-  
+
       const data = await response.json();
       console.log('Response data:', data); // Add this line for debugging
-  
+
       setConversation([
         { role: 'user', content: inputText },
         { role: 'assistant', content: data.generatedText },
@@ -55,88 +42,58 @@ function App() {
     }
   };
 
-  
   return (
     <div className="App">
-
-      <Header parallaxRef={ref} />    
-
-      {/* <header className="App-header"> */}
-        <Parallax pages={2} ref={ref}>
-
-          <ParallaxLayer 
-          offset={0.2} 
+      <Header parallaxRef={ref} />
+      <Parallax pages={2} ref={ref}>
+        {/* Initial Section */}
+        <ParallaxLayer
+          offset={0}
           speed={1}
-          factor={2}
+          factor={1}
           style={{
             backgroundSize: 'cover',
           }}
-          //sticky={{start: 0.9, end: 2.5}}
-          // onClick={() => ref.current.scrollTo(3)}
-          >
+        >
           <div className="pic-bio">
             <Typewriter text="amr elhady" speed={200} fontSize="240px" showCaret={true} />
-            
-            {/* <img src={sampleimage} className="headshot"/> */}
           </div>
+        </ParallaxLayer>
 
-          <ParallaxLayer offset={0.4} speed={0.8}>
+        {/* ChatBox Section */}
+        <ParallaxLayer offset={0.4} speed={0.8}>
           <ChatBox onSendMessage={handleSendMessage} conversation={conversation} />
-          
-          {/* <div className="arrow-container">
-            <ScrollArrow parallaxRef={ref} />
-          </div> */}
+        </ParallaxLayer>
 
-          <ParallaxLayer offset={0.3} speed={0.5}>
-            <div className='text-container'>
-            <div className='textbox1'></div>
-            {/* <div className='textbox1'>and</div>
-            <div className='textbox1'>Only</div> */}
+        {/* About Section */}
+        <ParallaxLayer offset={1} speed={0.8}>
+          <div className="about-section">
+            <h2>About Me</h2>
+            <p>
+              Welcome! I'm Amr Elhady, a passionate developer with experience in building dynamic web applications. My interests include web development, AI, and open-source projects. Feel free to explore my work and connect with me!
+            </p>
+          </div>
+        </ParallaxLayer>
 
-            </div>
-            
-          </ParallaxLayer>
-          
-          </ParallaxLayer>
-
-          
-          </ParallaxLayer>
-          
-          
-          <ParallaxLayer offset={1.75} speed={.8}>
+        {/* Social Media Icons Section */}
+        <ParallaxLayer offset={1.75} speed={0.8}>
           <div id="socials"></div>
-            
-            {/* <div className="Socials" ref={socialRef}> */}
-            <div className="Socials" >
-              <LinkedInLogo />
-              <GitHubLogo />
-              <Email />
-            </div>
-            
-            <div className="Socials">
-              <PopupButton
-                className = "calendly"
-                url="https://calendly.com/amrelhady/tech-internship-chat"
-                /*
-                * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
-                * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
-                */
-                rootElement={document.getElementById("root")}
-                text="Calendly"
-              />
-            </div>
-           
-            <Footer />
-            </ParallaxLayer>
-      
-            
-        </Parallax>
-      {/* </header> */}
-
-      
-
-
-      
+          <div className="Socials">
+            <LinkedInLogo />
+            <GitHubLogo />
+            <Email />
+          </div>
+          <div className="Socials">
+            <PopupButton
+              className="calendly"
+              url="https://calendly.com/amrelhady/tech-internship-chat"
+              rootElement={document.getElementById("root")}
+              text="Calendly"
+            />
+          </div>
+          <Footer />
+        </ParallaxLayer>
+      </Parallax>
     </div>
   );
 }
