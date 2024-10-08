@@ -80,6 +80,22 @@ input {
   border: 1px solid #ddd;
 }
 
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.about-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
 
 
 

@@ -48,9 +48,9 @@ function App() {
       <Parallax pages={2} ref={ref}>
         {/* Initial Section */}
         <ParallaxLayer
-          offset={0}
+          offset={0.2}
           speed={1}
-          factor={1}
+          factor={2}
           style={{
             backgroundSize: 'cover',
           }}
